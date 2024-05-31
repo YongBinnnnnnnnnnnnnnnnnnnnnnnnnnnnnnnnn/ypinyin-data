@@ -35,7 +35,7 @@ with open("mozillang-source/pinyin-data/pinyin.txt", "r") as f:
         continue
       if x >= "a" and x <= "z":
         continue
-      if x in u_letters:
+      if x in unnormalized_letters:
         continue
       unnormalized_letters.add(x)
     pinyin = pinyin.split(',')
