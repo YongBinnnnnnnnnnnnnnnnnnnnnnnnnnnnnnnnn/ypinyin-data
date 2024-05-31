@@ -1,3 +1,6 @@
 [submodule "mozillang-source/pinyin-data"]
 	path = mozillang-source/pinyin-data
 	url = https://github.com/mozillazg/pinyin-data
+[submodule "libs/ypinyin-python"]
+	path = libs/ypinyin-python
+	url = https://github.com/YongBinnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn/ypinyin-python
