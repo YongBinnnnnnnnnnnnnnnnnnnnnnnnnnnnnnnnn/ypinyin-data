@@ -41,7 +41,7 @@ with open("mozillang-source/pinyin-data/pinyin.txt", "r") as f:
     pinyin = pinyin.split(',')
     pinyin_possibilities.update(pinyin)
     word = bytearray.fromhex(code).decode("utf-16be")
-    line = word + " " + ",".join(set(pinyin))
+    line = word + " " + ",".join(sorted(set(pinyin)))
     print(line)
     mozillang_normalized = mozillang_normalized + line + "\n"
 
@@ -55,12 +55,12 @@ if unnormalized_letters:
   print("WARNING: special cases found!", sorted(unnormalized_letters))
 #print(pinyin_possibilities)
 with open("data/pinyin_possibilities.txt", "w") as f:
-  f.write(" ".join(pinyin_possibilities))
+  f.write(" ".join(sorted(pinyin_possibilities)))
 
 #print(pinyin2hanzi)
 with open("data/pinyin2hanzi.txt", "w") as f:
   for k, v in pinyin2hanzi.items():
-    f.write(k + " " + ",".join(v) + "\n")
+    f.write(k + " " + ",".join(sorted(v)) + "\n")
 
 with open("data/mozillang_normalized.txt", "w") as f:
   f.write(mozillang_normalized)
